@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Me If You can!!!</title>
+</head>
+<body>
+    <input type="text" id="inp" placeholder="Guess the number"><button onclick="Check()">Analyse</button>
+    <script>
+        var count=5;
+        var al
+        var para=document.createElement("p")
+        function Check(){
+            var ip=document.getElementById("inp")
+            var a=(Math.floor(Math.random()*5)+1)
+            console.log(a)
+            var b=ip.value;
+            console.log(b)
+            if(a==b){
+                if(count==10){
+                    window.alert("Congrats, You found")
+                    return;
+                }
+                else{
+                    count++;
+                }
+            }
+            else{
+                if(count==1){
+                    window.alert("Oops, You're Wrong!")
+                    return
+                }
+                else{
+                    count--;
+                }
+            }
+            para.textContent=count;
+            document.body.appendChild(para)
+        }
+       
+    </script>
+</body>
+</html>
